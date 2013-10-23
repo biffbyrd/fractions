@@ -1,6 +1,6 @@
 # Fractions
 
-Defines a Fraction data structure that achieves 100% decimal precision by storing integers for numerator and denominator. It provides basic mathematical operations, comparisons, and pattern matching. It also exteds Ordered[Fraction], which allows for sorting.
+Defines a Fraction data structure that achieves 100% decimal precision by storing integers for numerator and denominator. It provides basic mathematical operations, comparisons, and pattern matching. It also extends `Ordered[Fraction]`, which allows us to sort `List[Fraction]`s.
 
 Example usage:
 ```scala
