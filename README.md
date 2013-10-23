@@ -18,12 +18,12 @@ x: fractions.Fraction = 5 / 7
 scala> val y = (7 :/ 5) * (3 :/ 13)
 y: fractions.Fraction = 21 / 65
 
-scala> val y = (21 :/ 3)
-y: fractions.Fraction = 21 / 3
+scala> val y = (3 :/ 21)
+y: fractions.Fraction = 1 / 7
 
-scala> y.reduce
-res2: fractions.Fraction = 7 / 1
-
-scala> x < y
+scala> y < x
 res3: Boolean = true
+
+scala> y match { case 1 :/ 7 => println("yes!") }
+yes!
 ```
