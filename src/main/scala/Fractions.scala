@@ -15,7 +15,7 @@ trait Fractions {
 
   private def gcd( a: Int, b: Int ): Int = if ( b == 0 ) a else gcd( b, a % b )
 
-  case class Fraction( val n: Int, val d: Int ) {
+  case class Fraction( val n: Int, val d: Int ) extends Ordered[ Fraction ] {
     val toBigD: BigDecimal = BigDecimal( n ) / BigDecimal( d )
     val toDouble: Double = n.toDouble / d.toDouble
     val isDefined: Boolean = d != 0
@@ -31,12 +31,9 @@ trait Fractions {
     def +( that: Fraction ): Fraction = Fraction( n * that.d + that.n * d, d * that.d ).reduce
     def -( that: Fraction ): Fraction = this + ( -1 * that ).reduce
 
-    def ==( that: Fraction ): Boolean = ( n * that.d ) == ( that.n * d )
-    def !=( that: Fraction ): Boolean = !( this == that )
-    def >( that: Fraction ): Boolean = ( n * that.d ) > ( that.n * d )
-    def <( that: Fraction ): Boolean = ( n * that.d ) < ( that.n * d )
-    def >=( that: Fraction ): Boolean = !( this < that )
-    def <=( that: Fraction ): Boolean = !( this > that )
+    def compare( that: Fraction ): Int = ( n * that.d ) - ( that.n * d )
+    def ==( that: Fraction ): Boolean = this.compare( that ) == 0
+    def !=( that: Fraction ): Boolean = this.compare( that ) != 0
   }
 
   object :/ {
