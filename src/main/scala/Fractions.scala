@@ -1,14 +1,3 @@
-/**
- * Defines a Fraction data structure that achieves 100% decimal precision by storing integers as
- * numerators and denominators. It provides basic mathematical operations, comparisons, and pattern
- * matching.
- *
- * You can create a fraction with the :/ operator. For example:
- *
- * {{{
- * (5 :/ 7) * 5
- * }}}
- */
 trait Fractions {
 
   implicit def int2Fract( i: Int ): Fraction = Fraction( i, 1 )
