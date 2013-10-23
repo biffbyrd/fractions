@@ -13,7 +13,7 @@ scala> import fractions._
 import fractions._
 
 scala> (7 :/ 5) * (3 :/ 13) + 12
-res1: f.Fraction = 801 / 65
+res1: fractions.Fraction = 801 / 65
 
 scala> val x = 5 :/ 7
 x: fractions.Fraction = 5 / 7
